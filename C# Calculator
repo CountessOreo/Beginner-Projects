@@ -1,0 +1,53 @@
+namespace Calculator
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1;
+            double num2;
+            char symbol;
+            double result = 0;
+
+            Console.WriteLine("------------");
+            Console.WriteLine("Calculator");
+            Console.WriteLine("------------");
+
+            do
+            {
+                Console.WriteLine("Enter number 1: ");
+                num1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Enter number 2: ");
+                num2 = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Pick an operator: (+, -, /, *) ");
+                symbol = Convert.ToChar(Console.ReadLine());
+
+                switch (symbol)
+                {
+                    case '+':
+                        result = num1 + num2;
+                        Console.WriteLine($"Your result: {num1} + {num2} = {result}");
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        Console.WriteLine($"Your result: {num1} - {num2} = {result}");
+                    break;
+                    case '*':
+                        result = num1 * num2;
+                        Console.WriteLine($"Your result: {num1} * {num2} = {result}");
+                    break;
+                    case '/':
+                        result = num1 / num2;
+                        Console.WriteLine($"Your result: {num1} / {num2} = {result}");
+                    break;
+                }
+                Console.WriteLine("Do you want to calculate again? (Y = yes, N = no)");
+            } while (Console.ReadLine().ToUpper() == "Y");
+
+            Console.WriteLine("Bye");
+
+        }
+    }
+}
